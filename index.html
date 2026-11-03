@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BodyGlitch Studio | Clinical Medical Thrillers — Coming Soon</title>
+  <meta name="description" content="BodyGlitch Studio — High-impact, 100% evidence-based medical cinema curated by Dr. Samridh Verma (MBBS). Full streaming platform launching soon on bodyglitchstudio.com." />
+  <meta name="theme-color" content="#141414" />
+  <meta property="og:title" content="BodyGlitch Studio | Streaming Soon" />
+  <meta property="og:description" content="1.1M+ Organic Views • 96.8K Shares • 100% Evidence-Based Clinical Curation by Dr. Samridh Verma (MBBS). Till launch, stream on Instagram or book a consultation at drsamridhverma.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bodyglitchstudio.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-base: #0b0b0b;
+      --bg-surface: #141414;
+      --bg-card: #1b1b1b;
+      --netflix-red: #e50914;
+      --netflix-red-hover: #f6121d;
+      --text-primary: #ffffff;
+      --text-secondary: #d2d2d2;
+      --text-muted: #a3a3a3;
+      --accent-green: #46d369;
+      --border-subtle: rgba(255, 255, 255, 0.14);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Visually hidden utility that reveals on focus for skip links */
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 9999;
+      background: var(--netflix-red);
+      color: var(--text-primary);
+      padding: 0.75rem 1.25rem;
+      font-weight: 700;
+      border-radius: 0.375rem;
+      text-decoration: none;
+    }
+
+    :where(a:any-link, button):focus-visible {
+      outline: 3px solid var(--text-primary);
+      outline-offset: 3px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(229, 9, 20, 0.24) 0%, rgba(11, 11, 11, 0) 60%),
+        radial-gradient(circle at 85% 25%, rgba(229, 9, 20, 0.12) 0%, rgba(11, 11, 11, 0) 50%),
+        linear-gradient(180deg, #090909 0%, #141414 50%, #090909 100%);
+    }
+
+    /* Subtle scanline/cinema texture overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.012) 0px,
+        rgba(255, 255, 255, 0.012) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index: 1;
+    }
+
+    /* Top Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.55) 75%, transparent 100%);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-mark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      letter-spacing: 0.06em;
+      color: var(--netflix-red);
+      text-shadow: 0 2px 18px rgba(229, 9, 20, 0.55);
+      line-height: 1;
+    }
+
+    .brand-studio {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      letter-spacing: 0.12em;
+      color: var(--text-primary);
+      padding: 0.15rem 0.45rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      line-height: 1;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(229, 9, 20, 0.16);
+      border: 1px solid rgba(229, 9, 20, 0.55);
+      color: #ff8a8f;
+    }
+
+    .status-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--netflix-red);
+      box-shadow: 0 0 10px var(--netflix-red);
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.55; }
+    }
+
+    /* Main Content Container */
+    main {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.25rem, 5vw, 4rem) 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* Hero Spotlight Grid */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .n-series-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .n-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--netflix-red);
+      color: var(--text-primary);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 0;
+      border-radius: 0.2rem;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.25rem);
+      line-height: 0.96;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title .glitch-accent {
+      color: var(--netflix-red);
+      display: inline-block;
+    }
+
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .match-score {
+      color: var(--accent-green);
+      font-weight: 800;
+    }
+
+    .maturity-badge {
+      border: 1px solid var(--text-secondary);
+      padding: 0.1rem 0.45rem;
+      font-size: 0.75rem;
+      border-radius: 0.2rem;
+      color: var(--text-primary);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+      color: var(--text-secondary);
+      max-width: 62ch;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-lead strong {
+      color: var(--text-primary);
+    }
+
+    /* Call-to-action Notice Box */
+    .destination-panel {
+      background: linear-gradient(135deg, rgba(229, 9, 20, 0.14) 0%, rgba(20, 20, 20, 0.92) 60%);
+      border: 1px solid rgba(229, 9, 20, 0.45);
+      border-left: 4px solid var(--netflix-red);
+      border-radius: 0.5rem;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .destination-panel-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ff8a8f;
+      margin-bottom: 0.4rem;
+    }
+
+    .destination-panel p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      min-block-size: 3.1rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 0.35rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background-color: var(--netflix-red);
+      color: var(--text-primary);
+      box-shadow: 0 8px 24px rgba(229, 9, 20, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--netflix-red-hover);
+    }
+
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.14);
+      color: var(--text-primary);
+      border-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.24);
+      border-color: var(--text-primary);
+    }
+
+    .btn svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    /* Right Column: Flagship Series Spotlight Card */
+    .spotlight-card {
+      background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .poster-stage {
+      position: relative;
+      padding: 2rem 1.75rem 1.5rem;
+      background:
+        radial-gradient(circle at 75% 20%, rgba(229, 9, 20, 0.38) 0%, transparent 55%),
+        linear-gradient(160deg, #1b0708 0%, #0f0f0f 65%, #141414 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .poster-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .top10-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--netflix-red);
+      color: var(--text-primary);
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.55rem;
+      border-radius: 0.2rem;
+    }
+
+    .ep-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .series-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.1rem, 4vw, 2.85rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .episode-subtitle {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ff8a8f;
+      margin-bottom: 0.75rem;
+    }
+
+    .episode-synopsis {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ECG Wave Visual */
+    .ecg-bar {
+      width: 100%;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .ecg-bar svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--netflix-red);
+      stroke-width: 2.2;
+      fill: none;
+      filter: drop-shadow(0 0 6px rgba(229, 9, 20, 0.65));
+    }
+
+    .card-footer {
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: #141414;
+    }
+
+    .curator-credit {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .curator-credit strong {
+      color: var(--text-primary);
+      display: block;
+      font-size: 0.92rem;
+    }
+
+    .card-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 0.3rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-subtle);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background-color 0.15s ease;
+    }
+
+    .card-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Proven Metrics Row */
+    .metrics-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .section-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-heading::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 1.15rem;
+      background: var(--netflix-red);
+      border-radius: 2px;
+    }
+
+    .metrics-grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.5rem;
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .metric-card:hover {
+      border-color: rgba(229, 9, 20, 0.65);
+      transform: translateY(-2px);
+    }
+
+    .metric-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.35rem;
+      line-height: 1;
+      color: var(--text-primary);
+      letter-spacing: 0.03em;
+    }
+
+    .metric-value span {
+      color: var(--netflix-red);
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .metric-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Quick Access Portal Cards */
+    .portals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .portal-card {
+      background: linear-gradient(145deg, #1b1b1b 0%, #121212 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.6rem;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .portal-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #ff8a8f;
+      margin-bottom: 0.5rem;
+    }
+
+    .portal-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .portal-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    .portal-action {
+      align-self: flex-start;
+    }
+
+    /* Native Modal Dialog for Episode Preview Info */
+    dialog.preview-modal {
+      margin: auto;
+      max-width: 560px;
+      width: calc(100% - 2rem);
+      background: #181818;
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.75rem;
+      padding: 0;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+    }
+
+    dialog.preview-modal::backdrop {
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-header {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .modal-close {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      min-inline-size: 2.25rem;
+      min-block-size: 2.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem clamp(1.25rem, 5vw, 4rem);
+      background: #080808;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Forced Colors Mode (Windows High Contrast) support */
+    @media (forced-colors: active) {
+      .navbar,
+      .spotlight-card,
+      .metric-card,
+      .portal-card,
+      .destination-panel,
+      .btn,
+      dialog.preview-modal {
+        border: 1px solid CanvasText;
+      }
+      .status-dot {
+        background: Highlight;
+        forced-color-adjust: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip-link visually-hidden">Skip to main content</a>
+
+  <header class="navbar">
+    <a href="/" class="brand" aria-label="BodyGlitch Studio Home">
+      <span class="brand-mark">BODYGLITCH</span>
+      <span class="brand-studio">STUDIO</span>
+    </a>
+    <div class="nav-actions">
+      <div class="status-pill" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Streaming Platform Coming Soon</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <section class="hero-grid" aria-labelledby="hero-heading">
+      <div>
+        <div class="n-series-badge">
+          <span class="n-badge-icon" aria-hidden="true">B</span>
+          <span>A BodyGlitch Original Production</span>
+        </div>
+
+        <h1 id="hero-heading" class="hero-title">
+          When The Human Body <span class="glitch-accent">Glitches.</span><br />
+          Streaming Soon.
+        </h1>
+
+        <div class="meta-tags" aria-label="Platform highlights">
+          <span class="match-score">99% Clinical Match</span>
+          <span>2026</span>
+          <span class="maturity-badge">U/A 16+</span>
+          <span>4K HDR Vertical &amp; Cinema</span>
+          <span>Evidence-Based Medical Thrillers</span>
+        </div>
+
+        <p class="hero-lead">
+          The dedicated dark-cinema streaming experience for <strong>BodyGlitch Studio</strong> is currently being engineered for <strong>bodyglitchstudio.com</strong>. Curated and founded by <strong>Dr. Samridh Verma (MBBS)</strong>, we turn real-world acute clinical emergencies into gripping, life-saving visual storytelling.
+        </p>
+
+        <div class="destination-panel">
+          <p class="destination-panel-title">Till Then — Watch &amp; Connect Now</p>
+          <p>
+            Stream all released episodes immediately on our official Instagram page <strong>@bodyglitchstudio</strong> or visit <strong>www.drsamridhverma.com</strong> for clinical consultations and medical resources.
+          </p>
+        </div>
+
+        <div class="cta-group">
+          <a
+            href="https://www.instagram.com/bodyglitchstudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <span>Visit Instagram (@bodyglitchstudio)</span>
+          </a>
+
+          <a
+            href="https://www.drsamridhverma.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V13h3v-2h-3V7.07A8 8 0 0 1 19.93 11H17v2h2.93A8 8 0 0 1 13 16.93zM11 7.07V11H8v2h3v3.93A8 8 0 0 1 4.07 13H7v-2H4.07A8 8 0 0 1 11 7.07z" />
+            </svg>
+            <span>Consultation Website (drsamridhverma.com)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Flagship Series Card -->
+      <aside class="spotlight-card" aria-labelledby="flagship-title">
+        <div class="poster-stage">
+          <div class="poster-top-row">
+            <span class="top10-badge">#1 Flagship Series</span>
+            <span class="ep-tag">Season 1 • Episode 2</span>
+          </div>
+
+          <h2 id="flagship-title" class="series-title">Ek Galat Faisla</h2>
+          <p class="episode-subtitle">Episode 2: Acute Respiratory Distress / Dinner Blunder</p>
+          <p class="episode-synopsis">
+            One ordinary dinner table decision spirals into a rapid-onset airway and respiratory crisis. Dissecting the exact physiological cascade—and the split-second clinical judgment that separates survival from catastrophe.
+          </p>
+
+          <div class="ecg-bar" aria-hidden="true">
+            <svg viewBox="0 0 400 50" preserveAspectRatio="none">
+              <polyline points="0,25 70,25 85,15 95,35 110,25 145,25 155,5 165,46 178,12 190,32 205,25 270,25 285,8 297,44 310,18 325,25 400,25" />
+            </svg>
+          </div>
+
+          <button type="button" class="card-link" id="open-preview-btn">
+            <span>Episode Dossier &amp; Stream Link</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="card-footer">
+          <div class="curator-credit">
+            <span>Created &amp; Clinically Verified By</span>
+            <strong>Dr. Samridh Verma (MBBS)</strong>
+          </div>
+          <a
+            href="https://www.instagram.com/bodyglitchstudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-link"
+          >
+            <span>Watch on IG</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Proven Metrics Section -->
+    <section class="metrics-section" aria-labelledby="metrics-heading">
+      <h2 id="metrics-heading" class="section-heading">Proven Studio Impact</h2>
+      <ul class="metrics-grid" role="list">
+        <li class="metric-card">
+          <div class="metric-value">1.1M<span>+</span></div>
+          <div class="metric-label">Organic Views</div>
+          <div class="metric-sub">High-retention medical storytelling across flagship reels</div>
+        </li>
+        <li class="metric-card">
+          <div class="metric-value">96.8K<span>+</span></div>
+          <div class="metric-label">Audience Shares</div>
+          <div class="metric-sub">Peer-to-peer life-saving emergency awareness</div>
+        </li>
+        <li class="metric-card">
+          <div class="metric-value">100<span>%</span></div>
+          <div class="metric-label">Evidence-Based Clinical Curation</div>
+          <div class="metric-sub">Every script medically vetted by Dr. Samridh Verma (MBBS)</div>
+        </li>
+        <li class="metric-card">
+          <div class="metric-value">MSME</div>
+          <div class="metric-label">Registered Enterprise</div>
+          <div class="metric-sub">Official Indian Digital Health &amp; Medical Media Studio</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Direct Portals -->
+    <section class="metrics-section" aria-labelledby="portals-heading">
+      <h2 id="portals-heading" class="section-heading">Official Destinations While We Build</h2>
+      <div class="portals-grid">
+        <article class="portal-card">
+          <div>
+            <span class="portal-badge">Official Social Cinema Hub</span>
+            <h3 class="portal-title">BodyGlitch Studio on Instagram</h3>
+            <p class="portal-desc">
+              Watch <em>"Ek Galat Faisla"</em> and our latest clinical breakdowns, physiological animations, and emergency response reels on <strong>@bodyglitchstudio</strong>.
+            </p>
+          </div>
+          <a
+            href="https://www.instagram.com/bodyglitchstudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary portal-action"
+          >
+            <span>Open @bodyglitchstudio on Instagram</span>
+          </a>
+        </article>
+
+        <article class="portal-card">
+          <div>
+            <span class="portal-badge">Founder &amp; Clinical Practice</span>
+            <h3 class="portal-title">Dr. Samridh Verma (MBBS)</h3>
+            <p class="portal-desc">
+              Need an evidence-based medical consultation, clinical guidance, or want to explore Dr. Samridh Verma's medical portfolio? Visit the official consultation portal.
+            </p>
+          </div>
+          <a
+            href="https://www.drsamridhverma.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary portal-action"
+          >
+            <span>Visit www.drsamridhverma.com</span>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="episode-modal" class="preview-modal" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <div>
+        <p class="portal-badge">Flagship Episode Dossier</p>
+        <h2 id="modal-title" class="portal-title">Ek Galat Faisla — Episode 2</h2>
+      </div>
+      <button type="button" class="modal-close" id="close-preview-btn" aria-label="Close modal">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        <strong>Case File:</strong> Acute Respiratory Distress / Dinner Blunder
+      </p>
+      <p>
+        While our full interactive web player on <strong>bodyglitchstudio.com</strong> is in final deployment, you can stream the complete episode directly on the official BodyGlitch Studio Instagram channel or consult with Dr. Samridh Verma.
+      </p>
+      <div class="cta-group">
+        <a
+          href="https://www.instagram.com/bodyglitchstudio/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          <span>Stream Now on Instagram</span>
+        </a>
+        <a
+          href="https://www.drsamridhverma.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          <span>Consult Dr. Samridh Verma</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 BodyGlitch Studio (Registered MSME Enterprise). Founded &amp; Curated by Dr. Samridh Verma (MBBS).</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/bodyglitchstudio/" target="_blank" rel="noopener noreferrer">Instagram (@bodyglitchstudio)</a>
+        <a href="https://www.drsamridhverma.com" target="_blank" rel="noopener noreferrer">www.drsamridhverma.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('episode-modal');
+    const openBtn = document.getElementById('open-preview-btn');
+    const closeBtn = document.getElementById('close-preview-btn');
+
+    if (modal && openBtn && closeBtn) {
+      openBtn.addEventListener('click', () => {
+        modal.showModal();
+      });
+      closeBtn.addEventListener('click', () => {
+        modal.close();
+      });
+      modal.addEventListener('click', (event) => {
+        const rect = modal.getBoundingClientRect();
+        const clickedInDialog =
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width;
+        if (!clickedInDialog) {
+          modal.close();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
