@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service &amp; Medical Disclaimer | BodyGlitch Studio</title>
+  <meta name="description" content="Official Terms of Service and Clinical Education Disclaimer for BodyGlitch Studio (bodyglitchstudio.com), curated by Dr. Samridh Verma (MBBS)." />
+  <meta name="theme-color" content="#141414" />
+  <link rel="canonical" href="https://bodyglitchstudio.com/terms" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-base: #0b0b0b;
+      --bg-surface: #141414;
+      --bg-card: #1b1b1b;
+      --netflix-red: #e50914;
+      --text-primary: #ffffff;
+      --text-secondary: #d2d2d2;
+      --text-muted: #a3a3a3;
+      --border-subtle: rgba(255, 255, 255, 0.14);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 9999;
+      background: var(--netflix-red);
+      color: var(--text-primary);
+      padding: 0.75rem 1.25rem;
+      font-weight: 700;
+      border-radius: 0.375rem;
+      text-decoration: none;
+    }
+
+    :where(a:any-link, button):focus-visible {
+      outline: 3px solid var(--text-primary);
+      outline-offset: 3px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      text-align: start;
+      overflow-wrap: break-word;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(229, 9, 20, 0.2) 0%, rgba(11, 11, 11, 0) 55%),
+        linear-gradient(180deg, #090909 0%, #141414 50%, #090909 100%);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-mark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 1rem + 2vw, 2.25rem);
+      letter-spacing: 0.06em;
+      color: var(--netflix-red);
+      line-height: 1;
+    }
+
+    .brand-studio {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.15rem, 0.9rem + 1vw, 1.5rem);
+      letter-spacing: 0.12em;
+      color: var(--text-primary);
+      padding: 0.15rem 0.45rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.3rem;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--text-primary);
+      background: rgba(229, 9, 20, 0.2);
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 5vw, 3rem) 4rem;
+    }
+
+    article.legal-doc {
+      max-width: 80ch;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .doc-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ff8a8f;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      text-wrap: balance;
+    }
+
+    .effective-date {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .legal-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.6rem;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .disclaimer-highlight {
+      border-left: 4px solid var(--netflix-red);
+      background: linear-gradient(135deg, rgba(229, 9, 20, 0.14) 0%, rgba(27, 27, 27, 0.95) 65%);
+    }
+
+    h2 {
+      font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      text-wrap: balance;
+      border-left: 3px solid var(--netflix-red);
+      padding-left: 0.75rem;
+    }
+
+    p, li {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      text-wrap: pretty;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    a {
+      color: #ff8a8f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--text-primary);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem clamp(1.25rem, 5vw, 4rem);
+      background: #080808;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    @media (forced-colors: active) {
+      .navbar, .legal-section {
+        border: 1px solid CanvasText;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip-link visually-hidden">Skip to main content</a>
+
+  <header class="navbar">
+    <a href="/" class="brand" aria-label="BodyGlitch Studio Home">
+      <span class="brand-mark">BODYGLITCH</span>
+      <span class="brand-studio">STUDIO</span>
+    </a>
+    <nav aria-label="Legal navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms" aria-current="page">Terms of Service</a></li>
+        <li><a href="/data-deletion">Data Deletion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <article class="legal-doc">
+      <header>
+        <span class="doc-badge">Platform Governance &amp; Clinical Disclaimer</span>
+        <h1>Terms of Service</h1>
+        <p class="effective-date">Effective Date: November 4, 2026 • Last Updated: November 4, 2026</p>
+      </header>
+
+      <section class="legal-section disclaimer-highlight" aria-labelledby="sec-med-disclaimer">
+        <h2 id="sec-med-disclaimer">1. Crucial Medical &amp; Emergency Disclaimer</h2>
+        <p>
+          All episodes, physiological dramatizations, reels, and narratives produced by <strong>BodyGlitch Studio</strong> (including the flagship series <em>"Ek Galat Faisla"</em>) are created strictly for <strong>public health awareness, clinical education, and dramatized storytelling</strong>.
+        </p>
+        <p>
+          <strong>Not a Substitute for Emergency Care:</strong> Streaming content on <a href="https://bodyglitchstudio.com">bodyglitchstudio.com</a> or <a href="https://www.instagram.com/bodyglitchstudio/" target="_blank" rel="noopener noreferrer">@bodyglitchstudio</a> does <strong>not</strong> establish a doctor-patient relationship and does not constitute individualized medical diagnosis or emergency treatment. If you or someone around you is experiencing an acute medical emergency (such as chest pain, choking, or acute respiratory distress), call your local emergency number (e.g., <strong>112 / 108 in India</strong> or <strong>911</strong>) or proceed to the nearest hospital emergency department immediately.
+        </p>
+        <p>
+          For formal, individualized medical consultations with <strong>Dr. Samridh Verma (MBBS)</strong>, please use the dedicated clinical portal at <a href="https://www.drsamridhverma.com" target="_blank" rel="noopener noreferrer">www.drsamridhverma.com</a>.
+        </p>
+      </section>
+
+      <section class="legal-section" aria-labelledby="sec-acceptance">
+        <h2 id="sec-acceptance">2. Acceptance of Terms</h2>
+        <p>
+          By accessing or using <a href="https://bodyglitchstudio.com">https://bodyglitchstudio.com</a> or interacting with BodyGlitch Studio media properties, you agree to be bound by these Terms of Service and our <a href="/privacy-policy">Privacy Policy</a>.
+        </p>
+      </section>
+
+      <section class="legal-section" aria-labelledby="sec-ip">
+        <h2 id="sec-ip">3. Intellectual Property Rights</h2>
+        <p>
+          All original scripts, video episodes, 3D physiological visualizations, sound design, logos, and the <strong>BodyGlitch Studio</strong> brand identity are the exclusive intellectual property of BodyGlitch Studio (Registered MSME Enterprise) and Dr. Samridh Verma (MBBS).
+        </p>
+        <ul>
+          <li>You may share official links and embeds from <a href="https://www.instagram.com/bodyglitchstudio/" target="_blank" rel="noopener noreferrer">@bodyglitchstudio</a> and <a href="https://bodyglitchstudio.com">bodyglitchstudio.com</a> for non-commercial educational awareness with clear attribution.</li>
+          <li>Unauthorized re-uploading, watermarking, commercial redistribution, or AI-training scraping of our episodes without prior written licensing from <a href="mailto:contact@bodyglitchstudio.com">contact@bodyglitchstudio.com</a> is strictly prohibited.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section" aria-labelledby="sec-thirdparty">
+        <h2 id="sec-thirdparty">4. Third-Party Links &amp; Embeds</h2>
+        <p>
+          Our platform integrates official embeds and links to Instagram (Meta Platforms, Inc.) and external clinical portals (<a href="https://www.drsamridhverma.com" target="_blank" rel="noopener noreferrer">www.drsamridhverma.com</a>). Your interaction with third-party platforms is governed by their respective terms and policies.
+        </p>
+      </section>
+
+      <section class="legal-section" aria-labelledby="sec-liability">
+        <h2 id="sec-liability">5. Limitation of Liability &amp; Governing Law</h2>
+        <p>
+          To the fullest extent permitted by applicable law, BodyGlitch Studio and Dr. Samridh Verma shall not be liable for any indirect, incidental, or consequential damages arising out of your reliance on general educational media content. These Terms are governed by the laws of India.
+        </p>
+      </section>
+
+      <section class="legal-section" aria-labelledby="sec-contact">
+        <h2 id="sec-contact">6. Official Contact Information</h2>
+        <ul>
+          <li><strong>Studio &amp; Licensing Desk:</strong> <a href="mailto:contact@bodyglitchstudio.com">contact@bodyglitchstudio.com</a></li>
+          <li><strong>Founder &amp; Medical Curator Desk:</strong> <a href="mailto:dr@bodyglitchstudio.com">dr@bodyglitchstudio.com</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 BodyGlitch Studio (Registered MSME Enterprise). Founded &amp; Curated by Dr. Samridh Verma (MBBS).</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/data-deletion">Data Deletion</a>
+        <a href="mailto:contact@bodyglitchstudio.com">contact@bodyglitchstudio.com</a>
+        <a href="mailto:dr@bodyglitchstudio.com">dr@bodyglitchstudio.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
