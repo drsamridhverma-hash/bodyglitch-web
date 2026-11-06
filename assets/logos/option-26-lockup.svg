@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 115" fill="none">
+          <!-- Fincher / Thriller style razor-sliced wordmark -->
+          <text x="20" y="64" fill="#F5F5F7" font-family="'Bebas Neue', sans-serif" font-size="68" letter-spacing="6">BODY</text>
+          <text x="172" y="64" fill="#E50914" font-family="'Bebas Neue', sans-serif" font-size="68" letter-spacing="6">GLITCH</text>
+          <!-- Diagonal Razor Cut Across Whole Title -->
+          <line x1="14" y1="54" x2="368" y2="28" stroke="#050507" stroke-width="5"/>
+          <line x1="14" y1="54" x2="368" y2="28" stroke="#00F0FF" stroke-width="1.5"/>
+          <!-- Right side thriller badge -->
+          <rect x="378" y="22" width="102" height="42" rx="3" fill="#E50914"/>
+          <text x="429" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-weight="800" font-size="16" letter-spacing="3">STUDIO</text>
+          <text x="22" y="88" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="10" letter-spacing="9">PSYCHOLOGICAL &amp; HIGH-STAKES THRILLERS</text>
+        </svg>

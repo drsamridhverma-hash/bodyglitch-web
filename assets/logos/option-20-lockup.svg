@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 115" fill="none">
+          <!-- A24 style geometric frame -->
+          <g transform="translate(14, 15)">
+            <rect x="2" y="2" width="84" height="80" stroke="#F5F5F7" stroke-width="2.5"/>
+            <line x1="2" y1="58" x2="86" y2="22" stroke="#E50914" stroke-width="3"/>
+            <text x="14" y="54" fill="#F5F5F7" font-family="'Bebas Neue', sans-serif" font-size="48" letter-spacing="2">B</text>
+            <text x="46" y="54" fill="#E50914" font-family="'Bebas Neue', sans-serif" font-size="48" letter-spacing="2">G</text>
+            <!-- Stencil knockouts -->
+            <line x1="43" y1="2" x2="43" y2="82" stroke="#050507" stroke-width="4"/>
+          </g>
+          <text x="118" y="60" fill="#F5F5F7" font-family="'Syne', sans-serif" font-weight="800" font-size="34" letter-spacing="3">BODYGLITCH</text>
+          <!-- Diagonal razor cut -->
+          <line x1="255" y1="24" x2="295" y2="70" stroke="#E50914" stroke-width="2.5"/>
+          <line x1="118" y1="74" x2="465" y2="74" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+          <text x="118" y="92" fill="#E50914" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="11" letter-spacing="11">THRILLER STUDIO</text>
+        </svg>

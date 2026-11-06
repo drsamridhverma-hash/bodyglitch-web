@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" fill="none">
+          <rect width="88" height="88" rx="14" fill="#08080C"/>
+          <rect x="8" y="14" width="36" height="60" fill="#E50914"/>
+          <rect x="44" y="14" width="36" height="60" stroke="#F5F5F7" stroke-width="3"/>
+          <text x="26" y="58" text-anchor="middle" fill="#FFFFFF" font-family="'Bebas Neue', sans-serif" font-size="44">B</text>
+          <text x="62" y="58" text-anchor="middle" fill="#F5F5F7" font-family="'Bebas Neue', sans-serif" font-size="44">G</text>
+          <rect x="42" y="42" width="42" height="4" fill="#08080C"/>
+          <rect x="46" y="43" width="34" height="2" fill="#00F0FF"/>
+        </svg>
