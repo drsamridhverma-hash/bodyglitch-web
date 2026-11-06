@@ -10,6 +10,7 @@
   <meta property="og:description" content="1.1M+ Organic Views • 96.8K Shares • 100% Evidence-Based Clinical Curation by Dr. Samridh Verma (MBBS). Till launch, stream on Instagram or book a consultation at drsamridhverma.com." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bodyglitchstudio.com" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -113,30 +114,20 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
       text-decoration: none;
       color: var(--text-primary);
+      transition: transform 0.18s ease, filter 0.18s ease;
     }
 
-    .brand-mark {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      letter-spacing: 0.06em;
-      color: var(--netflix-red);
-      text-shadow: 0 2px 18px rgba(229, 9, 20, 0.55);
-      line-height: 1;
+    .brand:hover {
+      transform: translateY(-1px);
+      filter: drop-shadow(0 4px 16px rgba(229, 9, 20, 0.4));
     }
 
-    .brand-studio {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-      letter-spacing: 0.12em;
-      color: var(--text-primary);
-      padding: 0.15rem 0.45rem;
-      border: 1px solid var(--border-subtle);
-      border-radius: 0.25rem;
-      background: rgba(255, 255, 255, 0.05);
-      line-height: 1;
+    .brand-logo-svg {
+      height: clamp(2.75rem, 4.2vw, 3.5rem);
+      width: auto;
+      display: block;
     }
 
     .nav-actions {
@@ -219,14 +210,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      background: var(--netflix-red);
-      color: var(--text-primary);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 0;
-      border-radius: 0.2rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      flex-shrink: 0;
     }
 
     .hero-title {
@@ -714,9 +700,18 @@
   <a href="#content" class="skip-link visually-hidden">Skip to main content</a>
 
   <header class="navbar">
-    <a href="/" class="brand" aria-label="BodyGlitch Studio Home">
-      <span class="brand-mark">BODYGLITCH</span>
-      <span class="brand-studio">STUDIO</span>
+    <a href="/" class="brand" aria-label="BodyGlitch Studios Home">
+      <svg class="brand-logo-svg" viewBox="0 0 360 98" fill="none" role="img" aria-hidden="true">
+        <rect x="6" y="6" width="138" height="56" fill="#E50914"/>
+        <text x="75" y="51" text-anchor="middle" fill="#FFFFFF" font-family="'Bebas Neue', sans-serif" font-size="52" letter-spacing="5">BODY</text>
+        <rect x="144" y="6" width="208" height="56" fill="#08080C" stroke="#F5F5F7" stroke-width="3"/>
+        <text x="248" y="51" text-anchor="middle" fill="#F5F5F7" font-family="'Bebas Neue', sans-serif" font-size="52" letter-spacing="5">GLITCH</text>
+        <rect x="141" y="32" width="214" height="4.5" fill="#08080C"/>
+        <rect x="152" y="33.25" width="194" height="2" fill="#00F0FF"/>
+        <line x1="6" y1="81" x2="112" y2="81" stroke="#E50914" stroke-width="2.5"/>
+        <text x="182" y="85" text-anchor="middle" fill="#F5F5F7" font-family="'Inter', sans-serif" font-weight="800" font-size="12.5" letter-spacing="11">STUDIOS</text>
+        <line x1="246" y1="81" x2="352" y2="81" stroke="#E50914" stroke-width="2.5"/>
+      </svg>
     </a>
     <div class="nav-actions">
       <div class="status-pill" role="status">
@@ -730,7 +725,15 @@
     <section class="hero-grid" aria-labelledby="hero-heading">
       <div>
         <div class="n-series-badge">
-          <span class="n-badge-icon" aria-hidden="true">B</span>
+          <svg class="n-badge-icon" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+            <rect width="88" height="88" rx="14" fill="#08080C"/>
+            <rect x="8" y="14" width="36" height="60" fill="#E50914"/>
+            <rect x="44" y="14" width="36" height="60" stroke="#F5F5F7" stroke-width="3"/>
+            <text x="26" y="58" text-anchor="middle" fill="#FFFFFF" font-family="'Bebas Neue', sans-serif" font-size="44">B</text>
+            <text x="62" y="58" text-anchor="middle" fill="#F5F5F7" font-family="'Bebas Neue', sans-serif" font-size="44">G</text>
+            <rect x="42" y="42" width="42" height="4" fill="#08080C"/>
+            <rect x="46" y="43" width="34" height="2" fill="#00F0FF"/>
+          </svg>
           <span>A BodyGlitch Original Production</span>
         </div>
 
