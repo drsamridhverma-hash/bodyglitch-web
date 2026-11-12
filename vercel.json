@@ -1,6 +1,13 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/sponsors",
+      "destination": "/sponsers",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
