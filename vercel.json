@@ -3,8 +3,8 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/sponsors",
-      "destination": "/sponsers",
+      "source": "/sponsers",
+      "destination": "/sponsors",
       "permanent": true
     }
   ],
