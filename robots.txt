@@ -8,3 +8,4 @@ User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://www.bodyglitchstudio.com/sitemap.xml
+
